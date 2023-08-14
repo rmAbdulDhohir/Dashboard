@@ -55,4 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 //default backoffice
 $route['admin'] = 'admin/Auth';
-$route['admin/(:any)'] = 'admin/$1';
+//$route['admin/(:any)'] = 'admin/$1';
