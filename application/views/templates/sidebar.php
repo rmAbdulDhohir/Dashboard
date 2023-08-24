@@ -25,52 +25,31 @@ $queryMenu = "  SELECT `user_menu`.`id`,`menu`
              
 ?>
 
-
 <!-- looping -->
-<?php foreach($menu as $m) ; { ?>
+<?php foreach($menu as $m) : ?>
 <div class="sidebar-heading">
     <?= $m['menu']; ?>
 </div>
 
 <?php 
-$menuID = $m['id'];
+$menuId = $m['id'];
 $querySubMenu = "   SELECT * 
                     FROM `user_sub_menu` 
                     WHERE `menu_id` = $menuId 
                     AND `is_active` = 1
                 ";
-$subMenu = $this->db->query($querySubMenu)->result_array();
-?>
+$subMenu = $this->db->query($querySubMenu)->result_array(); ?>
 
-(25:09)
-
-<?php } ?>
-
-
-
-<!-- Nav Item - Dashboard -->
-<li class="nav-item">
-    <a class="nav-link" href="index.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-    User
-</div>
-
-<li class="nav-item">
-    <a class="nav-link" href="charts.html">
-    <i class="fas fa-fw fa-users-cog"></i>
-        <span>My Profile</span></a>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider d-none d-md-block">
+    <?php foreach($subMenu as $sm) : ?>
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url($sm['url']); ?>">
+                <i class="<?= $sm['icon']; ?>"></i>
+                <span><?= $sm['title']; ?></span></a>
+        </li>
+    <?php endforeach ; ?>
+    <hr class="sidebar-divider">
+<?php endforeach ; ?>
 
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
