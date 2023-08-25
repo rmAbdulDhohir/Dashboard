@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Asset extends CI_Controller
+class Menu extends CI_Controller
 {
      public function index()
      {
@@ -11,7 +11,7 @@ class Asset extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('asset/index', $data);
+        $this->load->view('menu/index', $data);
         $this->load->view('templates/footer');
      }
 }
