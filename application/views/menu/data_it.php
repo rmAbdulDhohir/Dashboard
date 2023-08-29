@@ -6,10 +6,11 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama Karyawan</th>
-                    <th scope="col">Devisi</th>
-                    <th scope="col">Unit</th>
+                    <th scope="col">No</th>
+                    <th scope="col">Kode Inventory</th>
+                    <th scope="col">Merk & Seri</th>
+                    <th scope="col">Spesifikasi</th>
+                    <th scope="col">Kelengkapan Acc</th>
                     <th scope="col">Opsi</th>
                 </tr>
             </thead>
@@ -18,9 +19,10 @@
                 <?php foreach ($menu as $m) : ?>
                 <tr>
                     <th scope="row"><?= $i; ?></th>
-                    <td><?= $m['nama']; ?></td>
-                    <td><?= $m['devisi']; ?></td>
-                    <td><?= $m['unit']; ?></td>
+                    <td><?= $m['kode']; ?></td>
+                    <td><?= $m['merk']; ?></td>
+                    <td><?= $m['spesifikasi']; ?></td>
+                    <td><?= $m['kelengkapan']; ?></td>
                     <td>
                         <a href="">edit</a>
                         <a href="">delete</a>
